@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.6.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap-4.6.0.min.css">
+  <link rel="stylesheet" href="css/fontawsome-5.15.3.all.min.css">
+  
+  <title>Rapla Maakonna lauatennise võistluste läbiviimise infosüsteem</title>
+</head>
+
+<body>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <a class="text-reset text-decoration-none" href="index.html">
+      <i class="fas fa-table-tennis fa-2x"></i>
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <h5 class="my-0 mr-md-auto font-weight-bolder">
+      <a class="text-reset text-decoration-none" href="index.html">
+        Rapla Maakonna lauatennise võistluste läbiviimise infosüsteem
+      </a>
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="index.html">Avaleht</a>
+      <a class="p-2 text-dark" href="ajakava.html">Ajakava</a>
+      <a class="p-2 text-dark" href="voistlused.html">Võistlused</a>
+      <a class="p-2 text-dark" href="reitingud.html">Reitingud</a>
+      <a class="p-2 text-dark" href="kontakt.html"><u>Kontakt</u></a>
+    </nav>
+    <a class="btn btn-outline-secondary" href="#loginModal" data-toggle="modal">Logi sisse</a>
+    <!-- LogIn Modal -->
+    <div class="modal" id="loginModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header text-center">
+            <h5 class="modal-title ml-2">Logi sisse</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+              <form class="my-5" onSubmit="return checkAnswer();">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input id="username" name="username" class="form-control" placeholder="Kasutajanimi" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Salasõna" type="password" autocomplete="off">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-secondary btn-block">Sisene</button>
+                </div> <!-- form-group// -->
+              </form>
+            </article>
+          </div> <!-- card.// -->
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-5">
+    <h2 class="text-center my-4">Võta ühendust</h2>
+    <form class="w-50 mx-auto">
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <input type="text" class="form-control" required="" id="name" placeholder="Ees- ja perekonnanimi">
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+        </div>
+        <input type="email" class="form-control" required="" id="email" placeholder="E-posti aadress">
+      </div>
+      <textarea class="form-control my-3" required="" rows="7" placeholder="Kirjuta siia sõnum ..."></textarea>
+      <button type="submit" class="btn btn-secondary btn-block w-50 mx-auto">Saada sõnum teele</button>
+    </form>
+  </div>
+</body>
+
+</html>

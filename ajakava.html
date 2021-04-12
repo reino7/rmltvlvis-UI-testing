@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.6.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap-4.6.0.min.css">
+  <link rel="stylesheet" href="css/fontawsome-5.15.3.all.min.css">
+
+  <title>Rapla Maakonna lauatennise võistluste läbiviimise infosüsteem</title>
+</head>
+
+<body>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <a class="text-reset text-decoration-none" href="index.html">
+      <i class="fas fa-table-tennis fa-2x"></i>
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <h5 class="my-0 mr-md-auto font-weight-bolder">
+      <a class="text-reset text-decoration-none" href="index.html">
+        Rapla Maakonna lauatennise võistluste läbiviimise infosüsteem
+      </a>
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="index.html">Avaleht</a>
+      <a class="p-2 text-dark" href="ajakava.html"><u>Ajakava</u></a>
+      <a class="p-2 text-dark" href="voistlused.html">Võistlused</a>
+      <a class="p-2 text-dark" href="reitingud.html">Reitingud</a>
+      <a class="p-2 text-dark" href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="btn btn-outline-secondary" href="#loginModal" data-toggle="modal">Logi sisse</a>
+    <!-- LogIn Modal -->
+    <div class="modal" id="loginModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header text-center">
+            <h5 class="modal-title ml-2">Logi sisse</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+              <form class="my-5" onSubmit="return checkAnswer();">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input id="username" name="username" class="form-control" placeholder="Kasutajanimi" type="text">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Salasõna" type="password" autocomplete="off">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-secondary btn-block">Sisene</button>
+                </div> <!-- form-group// -->
+              </form>
+            </article>
+          </div> <!-- card.// -->
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-5">
+    <h2 class="text-center my-4">Ajakava</h2>
+
+    <div class="table-responsive-md">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Kuupäev</th>
+            <th scope="col">Algusaeg</th>
+            <th scope="col">Võistluse nimetus</th>
+            <th scope="col">Võistluskoht</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>19.09.2020</td>
+            <td>11:00</td>
+            <td>Rapla Maakonna Meistrivõistlused</td>
+            <td>Valtu Spordimaja</td>
+          </tr>
+          <tr>
+            <td>10.10.2020</td>
+            <td>10:00</td>
+            <td>Raplamaa seeriavõistluse 1. etapp</td>
+            <td>Alu Spordiklubi</td>
+          </tr>
+          <tr>
+            <td>18.10.2020</td>
+            <td>10:00</td>
+            <td>Raplamaa SVK Meistrivõistlused</td>
+            <td>Valtu Spordimaja</td>
+          </tr>
+          <tr>
+            <td>15.11.2020</td>
+            <td>10:00</td>
+            <td>Rapla Maakonna võistkondlikud Meistrivõistlused</td>
+            <td>Valtu Spordimaja</td>
+          </tr>
+          <tr>
+            <td>29.11.2020</td>
+            <td>10:00</td>
+            <td>Raplamaa seeriavõistluse 2. etapp</td>
+            <td>Märjamaa Spordihoone</td>
+          </tr>
+          <tr>
+            <td>12.12.2020</td>
+            <td>10:00</td>
+            <td>Raplamaa seeriavõistluse 3. etapp</td>
+            <td>Alu Spordiklubi</td>
+          </tr>
+          <tr>
+            <td>19.12.2020</td>
+            <td>10:00</td>
+            <td>Rapla Maakonna individuaal Karikavõistlus</td>
+            <td>Valtu Spordimaja</td>
+          </tr>
+          <tr>
+            <td>27.12.2020</td>
+            <td>11:00</td>
+            <td>Kohila Lahtine Laud</td>
+            <td>Kohila Spordikompleks</td>
+          </tr>
+          <tr>
+            <td>16.01.2021</td>
+            <td>10:00</td>
+            <td>Raplamaa seeriavõistluse 4. etapp</td>
+            <td>Valtu Spordimaja</td>
+          </tr>
+          <tr>
+            <td>20.02.2021</td>
+            <td>10:00</td>
+            <td>Raplamaa seeriavõistluse 5. etapp</td>
+            <td>Kohila Spordikompleks</td>
+          </tr>
+          <tr>
+            <td>06.03.2021</td>
+            <td>10:00</td>
+            <td>Raplamaa seeriavõistluse 6. etapp</td>
+            <td>Järvakandi Kool</td>
+          </tr>
+          <tr>
+            <td>10.04.2021</td>
+            <td>10:00</td>
+            <td>Raplamaa seeriavõistluse 7. etapp</td>
+            <td>Valtu Spordimaja</td>
+          </tr>
+          <tr>
+            <td>17.04.2021</td>
+            <td>10:00</td>
+            <td>Rapla Maakonna Meistrivõistlused</td>
+            <td>Valtu Spordimaja</td>
+          </tr>
+          <tr>
+            <td>24.04.2021</td>
+            <td>11:00</td>
+            <td>Ennu Soodla mälestusvõistlus</td>
+            <td>Alu Spordiklubi</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

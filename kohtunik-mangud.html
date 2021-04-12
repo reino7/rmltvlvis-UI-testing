@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.6.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap-4.6.0.min.css">
+  <link rel="stylesheet" href="css/fontawsome-5.15.3.all.min.css">
+
+  <title>Rapla Maakonna lauatennise võistluste läbiviimise infosüsteem</title>
+</head>
+
+<body>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom shadow-sm">
+    <a class="text-reset text-decoration-none" href="index.html">
+      <i class="fas fa-table-tennis fa-2x"></i>
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <h5 class="my-0 mr-md-auto font-weight-bolder">
+      <a class="text-reset text-decoration-none" href="index.html">
+        Rapla Maakonna lauatennise võistluste läbiviimise infosüsteem
+      </a>
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="index.html">Avaleht</a>
+      <a class="p-2 text-dark" href="ajakava.html">Ajakava</a>
+      <a class="p-2 text-dark" href="voistlused.html"><u>Võistlused</u></a>
+      <a class="p-2 text-dark" href="reitingud.html">Reitingud</a>
+      <a class="p-2 text-dark" href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <!-- <a class="btn btn-outline-secondary " href="#" data-toggle="modal"><i class="fas fa-user-circle fa-2x"></i> Kohtunik</a> -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-user-circle"></i>
+        &nbsp;kohtunik
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <a class="dropdown-item" href="#">Lisa võistlus</a>
+        <a class="dropdown-item disabled" href="#">Profiil</a>
+        <a class="dropdown-item disabled" href="#">Abi</a>
+        <div class="dropdown-divider my-1"></div>
+        <a class="dropdown-item" href="index.html">Logi välja</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-scroller bg-white">
+    <nav class="nav nav-underline justify-content-center">
+      <div class="row">
+        <div class="col">
+          <p class="text-dark text-center font-weight-bolder mt-3 mb-1">Raplamaa seeriavõistluse 1. etapp Kaiu auhindadele</p>
+          <a class="p-2 text-dark" href="raplamaa-seeriavõistluse-1etapp-10102020-voistluse-info.html">Võistluse
+            info</a>
+          <a class="p-2 text-dark" href="raplamaa-seeriavõistluse-1etapp-10102020-paigutus.html">Paigutus</a>
+          <a class="p-2 text-dark" href="raplamaa-seeriavõistluse-1etapp-10102020-voistlustabel.html">Võistlustabel</a>
+          <a class="p-2 text-dark" href="kohtunik-mangud.html"><u>Mängud</u></a>
+          <a class="p-2 text-dark" href="raplamaa-seeriavõistluse-1etapp-10102020-loppjarjestus.html">Lõppjärjestus</a>
+          <a class="p-2 text-dark" href="raplamaa-seeriavõistluse-2etapp-19102019-tulemused.html">Tulemused</a>
+        </div>
+      </div>
+    </nav>
+    <hr class="w-50">
+  </div>
+
+  <div class="container my-5">
+    <h2 class="text-center my-4">Mängud</h2>
+
+    <table class="table table-hover table-bordered" id="reitinguNimekiri">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nr</th>
+          <th scope="col">Võistleja 1</th>
+          <th scope="col">Võistleja 2</th>
+          <th scope="col">Laud</th>
+          <th scope="col">Võitja</th>
+          <th scope="col">Tulemus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Kustav Korjus</td>
+          <td>Heiki Valk</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Kustav Korjus&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Heiki Valk&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Lembit Meri</td>
+          <td>Kaljo Vesik
+          </td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Lembit Meri&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Kaljo Vesik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Heino Kass</td>
+          <td>Aare Aavik</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Heino Kass&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Aare Aavik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Gert Opik</td>
+          <td>Kaupo Opik</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Gert Opik&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Kaupo Opik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>Aigar Aasmäe</td>
+          <td>Aleksander Part</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Aigar Aasmäe&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Aleksander Part&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>6</th>
+          <td>Kustav Korjus</td>
+          <td>Heiki Valk</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Kustav Korjus&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Heiki Valk&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td>Lembit Meri</td>
+          <td>Kaljo Vesik
+          </td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Lembit Meri&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Kaljo Vesik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>8</th>
+          <td>Heino Kass</td>
+          <td>Aare Aavik</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Heino Kass&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Aare Aavik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>9</th>
+          <td>Gert Opik</td>
+          <td>Kaupo Opik</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Gert Opik&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Kaupo Opik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>10</th>
+          <td>Aigar Aasmäe</td>
+          <td>Aleksander Part</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Aigar Aasmäe&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Aleksander Part&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>11</th>
+          <td>Kustav Korjus</td>
+          <td>Heiki Valk</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Kustav Korjus&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Heiki Valk&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>12</th>
+          <td>Lembit Meri</td>
+          <td>Kaljo Vesik
+          </td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Lembit Meri&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Kaljo Vesik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>13</th>
+          <td>Heino Kass</td>
+          <td>Aare Aavik</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Heino Kass&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Aare Aavik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>14</th>
+          <td>Gert Opik</td>
+          <td>Kaupo Opik</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Gert Opik&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Kaupo Opik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>15</th>
+          <td>Aigar Aasmäe</td>
+          <td>Aleksander Part</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Aigar Aasmäe&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Aleksander Part&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>16</th>
+          <td>Kustav Korjus</td>
+          <td>Heiki Valk</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Kustav Korjus&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Heiki Valk&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>17</th>
+          <td>Lembit Meri</td>
+          <td>Kaljo Vesik
+          </td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Lembit Meri&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Kaljo Vesik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>18</th>
+          <td>Heino Kass</td>
+          <td>Aare Aavik</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Heino Kass&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Aare Aavik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>19</th>
+          <td>Gert Opik</td>
+          <td>Kaupo Opik</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Gert Opik&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Kaupo Opik&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+        <tr>
+          <th>20</th>
+          <td>Aigar Aasmäe</td>
+          <td>Aleksander Part</td>
+          <td>
+            <select name="compTables" id="compTables">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;1&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;2&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3&nbsp;&nbsp;</option>
+              <option value="4">&nbsp;&nbsp;4&nbsp;&nbsp;</option>
+              <option value="5">&nbsp;&nbsp;5&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinner" id="compWinner" class="w-100">
+              <option value="0" selected>&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;Aigar Aasmäe&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;Aleksander Part&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+          <td>
+            <select name="compWinnerScore" id="compWinnerScore">
+              <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;</option>
+              <option value="1">&nbsp;&nbsp;3:0&nbsp;&nbsp;</option>
+              <option value="2">&nbsp;&nbsp;3:1&nbsp;&nbsp;</option>
+              <option value="3">&nbsp;&nbsp;3:2&nbsp;&nbsp;</option>
+            </select>  
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</body>
+
+</html>
